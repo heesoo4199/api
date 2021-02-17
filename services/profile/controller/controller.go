@@ -31,8 +31,7 @@ func GetProfile(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		errors.WriteError(w, r, errors.DatabaseError(err.Error(), "Could not get current user's profile."))
-		return
-	}
+		return}
 
 	json.NewEncoder(w).Encode(user_profile)
 }
